@@ -23,8 +23,15 @@ class ViewController: UIViewController {
         var nombreString = nombreText.text
         var edadString = edadText.text
         
-        resultadoText.text = procesarDatos(Nombre: nombreString, Edad:edadString)
+        //resultadoText.text = procesarDatos(Nombre: nombreString, Edad:edadString)
         
+        /*Llamando a la función de la clase mensajes*/
+        
+        var objMen = Mensajes() //Objeto de la clase mensajes
+        
+         resultadoText.text = objMen.procesarDatos(Nombre: nombreText.text, Edad: edadText.text)
+        
+        println("\(objMen.nombreV)") /*Llamando a la propiedad que tenemos en la clase para imprimirse en consola*/
     }
     
     override func viewDidLoad() {
@@ -39,13 +46,6 @@ class ViewController: UIViewController {
     
     
     
-    func procesarDatos (Nombre nom:String, Edad eda:String)->String{
-    
-        var resultadoString = "Mi nombre es \(nom) y mi edad es \(eda) "
-        
-        return resultadoString
-    
-    }
 
 
 }
