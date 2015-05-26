@@ -9,15 +9,42 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var nombreText: UITextField!
+    @IBOutlet weak var edadText: UITextField!
+    
+    @IBOutlet weak var resultadoText: UITextView!
+    
+    
+    @IBAction func procesar(sender: AnyObject) {
+        
+        /*Llamando a la función procesarDatos*/
+        var nombreString = nombreText.text
+        var edadString = edadText.text
+        
+        resultadoText.text = procesarDatos(Nombre: nombreString, Edad:edadString)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+      
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    func procesarDatos (Nombre nom:String, Edad eda:String)->String{
+    
+        var resultadoString = "Mi nombre es \(nom) y mi edad es \(eda) "
+        
+        return resultadoString
+    
     }
 
 
